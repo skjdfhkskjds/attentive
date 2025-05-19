@@ -8,21 +8,9 @@
 import Foundation
 import Combine
 
-enum PomodoroSegmentType: String, CaseIterable, Identifiable {
-    case focus, shortBreak, longBreak
-    var id: String { rawValue }
-}
-
-struct PomodoroConfig {
-    var focusDuration: TimeInterval = 25 * 60
-    var shortBreakDuration: TimeInterval = 5 * 60
-    var longBreakDuration: TimeInterval = 15 * 60
-    var cyclesBeforeLongBreak: Int = 4
-}
-
 class PomodoroViewModel: ObservableObject {
     @Published var config: PomodoroConfig
-    @Published var currentSegment: PomodoroSegmentType = .focus
+    @Published var mode: PomodoroMode = .focus
     @Published var timeRemaining: TimeInterval
     @Published var isRunning: Bool = false
     @Published var cycleCount: Int = 0
@@ -43,12 +31,14 @@ class PomodoroViewModel: ObservableObject {
             }
         } else {
             timer?.invalidate()
+            timer = nil
         }
     }
 
     func tick() {
         guard timeRemaining > 0 else {
             timer?.invalidate()
+            timer = nil
             moveToNextSegment()
             return
         }
@@ -56,32 +46,33 @@ class PomodoroViewModel: ObservableObject {
     }
 
     func moveToNextSegment() {
-        switch currentSegment {
+        switch mode {
         case .focus:
             cycleCount += 1
             if cycleCount % config.cyclesBeforeLongBreak == 0 {
-                currentSegment = .longBreak
-                timeRemaining = config.longBreakDuration
+                mode = .longBreak
             } else {
-                currentSegment = .shortBreak
-                timeRemaining = config.shortBreakDuration
+                mode = .shortBreak
             }
         case .shortBreak:
-            currentSegment = .focus
-            timeRemaining = config.focusDuration
+            mode = .focus
         case .longBreak:
-            currentSegment = .focus
-            timeRemaining = config.focusDuration
+            mode = .focus
             cycleCount = 0
         }
-        isRunning = false
+        reset()
     }
 
     func reset() {
         timer?.invalidate()
-        currentSegment = .focus
-        timeRemaining = config.focusDuration
+        switch mode {
+        case .focus:
+            timeRemaining = config.focusDuration
+        case .shortBreak:
+            timeRemaining = config.shortBreakDuration
+        case .longBreak:
+            timeRemaining = config.longBreakDuration
+        }
         isRunning = false
-        cycleCount = 0
     }
 }

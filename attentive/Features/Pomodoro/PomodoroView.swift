@@ -7,59 +7,63 @@
 
 import SwiftUI
 
+let progressIndicatorSize: CGFloat = 330
+let progressIndicatorInnerSize: CGFloat = 280
+let progressIndicatorLineWidth: CGFloat = 18
+
 public struct PomodoroView: View {
     @StateObject private var viewModel = PomodoroViewModel()
     @State private var showOptions = false
 
     public var body: some View {
-        VStack(spacing: 32) {
-            HStack {
-                Button(action: { showOptions = true }) {
-                    Image(systemName: "ellipsis.circle")
-                        .font(.title)
+        ZStack {
+            viewModel.mode.theme.background
+                .ignoresSafeArea()
+            VStack(spacing: 48) {
+                ZStack {
+                    ArcProgressBar(progress: progress, mode: viewModel.mode)
+                    VStack {
+                        Text(timeString)
+                            .font(.system(size: 70, weight: .bold, design: .default))
+                            .foregroundColor(viewModel.mode.theme.accentOnSurface)
+                    }
                 }
-                .sheet(isPresented: $showOptions) {
-                    Text("Options go here")
-                        .padding()
-                }
-                Spacer()
-            }
-            .padding(.horizontal)
 
-            ZStack {
-                ArcProgressBar(progress: progress, segment: viewModel.currentSegment)
-                    .frame(width: 220, height: 220)
-                VStack {
-                    Text(viewModel.currentSegment == .focus ? "Focus" : (viewModel.currentSegment == .shortBreak ? "Short Break" : "Long Break"))
-                        .font(.title2)
-                        .bold()
-                    Text(timeString)
-                        .font(.system(size: 48, weight: .bold, design: .monospaced))
-                        .padding(.top, 8)
+                HStack(spacing: 16) {
+                    Button(action: { showOptions = true }) {
+                        Image(systemName: "ellipsis")
+                    }
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(viewModel.mode.theme.accentOnSurface)
+                        .background(viewModel.mode.theme.onSurface)
+                        .cornerRadius(12)
+                    .sheet(isPresented: $showOptions) {
+                        Text("Options go here")
+                            .padding()
+                    }
+                    Button(action: { viewModel.startPauseTimer() }) {
+                        Image(systemName: viewModel.isRunning ? "pause.fill" : "play.fill")
+                    }
+                        .frame(width: 80, height: 50)
+                        .foregroundColor(viewModel.mode.theme.onSurface)
+                        .background(viewModel.mode.theme.accentOnSurface)
+                        .cornerRadius(12)
+                    Button(action: { viewModel.moveToNextSegment() }) {
+                        Image(systemName: "forward.end.fill")
+                    }
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(viewModel.mode.theme.accentOnSurface)
+                        .background(viewModel.mode.theme.onSurface)
+                        .cornerRadius(12)
                 }
             }
-
-            HStack(spacing: 32) {
-                Button(action: { viewModel.startPauseTimer() }) {
-                    Image(systemName: viewModel.isRunning ? "pause.circle.fill" : "play.circle.fill")
-                        .resizable()
-                        .frame(width: 64, height: 64)
-                        .foregroundColor(.accentColor)
-                }
-                Button(action: { viewModel.moveToNextSegment() }) {
-                    Image(systemName: "forward.end.fill")
-                        .resizable()
-                        .frame(width: 48, height: 48)
-                        .foregroundColor(.accentColor)
-                }
-            }
+            .padding()
         }
-        .padding()
     }
 
     private var progress: Double {
         let total: TimeInterval
-        switch viewModel.currentSegment {
+        switch viewModel.mode {
         case .focus: total = viewModel.config.focusDuration
         case .shortBreak: total = viewModel.config.shortBreakDuration
         case .longBreak: total = viewModel.config.longBreakDuration
@@ -76,25 +80,40 @@ public struct PomodoroView: View {
 
 public struct ArcProgressBar: View {
     var progress: Double
-    var segment: PomodoroSegmentType
+    var mode: PomodoroMode
 
     public var body: some View {
         ZStack {
             Circle()
-                .stroke(Color.gray.opacity(0.2), lineWidth: 16)
+                .fill(mode.theme.lightOnSurface)
+                .frame(
+                    width: progressIndicatorSize,
+                    height: progressIndicatorSize
+                )
+            // Background arc (track)
+            Circle()
+                .stroke(mode.theme.onSurface, style: StrokeStyle(
+                    lineWidth: progressIndicatorLineWidth,
+                    lineCap: .round
+                ))
+                .rotationEffect(.degrees(-90))
+                .frame(
+                    width: progressIndicatorInnerSize,
+                    height: progressIndicatorInnerSize
+                )
+            // Foreground arc (progress)
             Circle()
                 .trim(from: 0, to: progress)
-                .stroke(segmentColor, style: StrokeStyle(lineWidth: 16, lineCap: .round))
+                .stroke(mode.theme.lightAccentOnSurface, style: StrokeStyle(
+                    lineWidth: progressIndicatorLineWidth,
+                    lineCap: .round
+                ))
                 .rotationEffect(.degrees(-90))
                 .animation(.linear, value: progress)
-        }
-    }
-
-    private var segmentColor: Color {
-        switch segment {
-        case .focus: return .blue
-        case .shortBreak: return .green
-        case .longBreak: return .orange
+                .frame(
+                    width: progressIndicatorInnerSize,
+                    height: progressIndicatorInnerSize
+                )
         }
     }
 }
