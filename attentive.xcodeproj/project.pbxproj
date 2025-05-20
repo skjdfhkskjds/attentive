@@ -13,6 +13,8 @@
 		5E5663BF2DDBEBB000B5BD06 /* PomodoroState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5663BE2DDBEBB000B5BD06 /* PomodoroState.swift */; };
 		5E5663CB2DDBF3AD00B5BD06 /* Inter-VariableFont_opsz,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E5663C22DDBF34D00B5BD06 /* Inter-VariableFont_opsz,wght.ttf */; };
 		5E5663CC2DDBF3AF00B5BD06 /* RobotoMono-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E5663C42DDBF35E00B5BD06 /* RobotoMono-VariableFont_wght.ttf */; };
+		5E5663D02DDC17CE00B5BD06 /* ArcProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5663CD2DDC17CE00B5BD06 /* ArcProgressBar.swift */; };
+		5E5663D12DDC17CE00B5BD06 /* ConfigOptionsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5663CE2DDC17CE00B5BD06 /* ConfigOptionsSheet.swift */; };
 		5E6572A42DC71F390063512A /* attentiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6572A32DC71F390063512A /* attentiveApp.swift */; };
 		5E6572A62DC71F390063512A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6572A52DC71F390063512A /* ContentView.swift */; };
 		5E6572A82DC71F3A0063512A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6572A72DC71F3A0063512A /* Assets.xcassets */; };
@@ -62,6 +64,8 @@
 		5E5663BE2DDBEBB000B5BD06 /* PomodoroState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroState.swift; sourceTree = "<group>"; };
 		5E5663C22DDBF34D00B5BD06 /* Inter-VariableFont_opsz,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-VariableFont_opsz,wght.ttf"; path = "../../../../../../Downloads/Inter,Roboto_Mono/Inter/Inter-VariableFont_opsz,wght.ttf"; sourceTree = "<group>"; };
 		5E5663C42DDBF35E00B5BD06 /* RobotoMono-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		5E5663CD2DDC17CE00B5BD06 /* ArcProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcProgressBar.swift; sourceTree = "<group>"; };
+		5E5663CE2DDC17CE00B5BD06 /* ConfigOptionsSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigOptionsSheet.swift; sourceTree = "<group>"; };
 		5E6572A02DC71F390063512A /* attentive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = attentive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6572A32DC71F390063512A /* attentiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attentiveApp.swift; sourceTree = "<group>"; };
 		5E6572A52DC71F390063512A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 		5E5663B72DDBDC5100B5BD06 /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				5E5663CF2DDC17CE00B5BD06 /* components */,
 				5E5663B52DDBDC5100B5BD06 /* PomodoroView.swift */,
 				5E5663B62DDBDC5100B5BD06 /* PomodoroViewModel.swift */,
 				5E5663BC2DDBEAC900B5BD06 /* PomodoroTheme.swift */,
@@ -163,6 +168,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		5E5663CF2DDC17CE00B5BD06 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				5E5663CD2DDC17CE00B5BD06 /* ArcProgressBar.swift */,
+				5E5663CE2DDC17CE00B5BD06 /* ConfigOptionsSheet.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		5E6572972DC71F390063512A = {
 			isa = PBXGroup;
 			children = (
@@ -190,7 +204,12 @@
 				5E5663C02DDBF32C00B5BD06 /* Shared */,
 				5E5663BB2DDBE9DF00B5BD06 /* Resources */,
 				5E5663B82DDBDC5100B5BD06 /* Features */,
+				5E5663C02DDBF32C00B5BD06 /* Shared */,
+				5E5663BB2DDBE9DF00B5BD06 /* Resources */,
+				5E5663B82DDBDC5100B5BD06 /* Features */,
 				5E6572A32DC71F390063512A /* attentiveApp.swift */,
+				5E5663B02DDBD9F000B5BD06 /* App */,
+				5E5663AF2DDBD9DE00B5BD06 /* Models */,
 				5E5663B02DDBD9F000B5BD06 /* App */,
 				5E5663AF2DDBD9DE00B5BD06 /* Models */,
 				5E6572A52DC71F390063512A /* ContentView.swift */,
@@ -348,6 +367,8 @@
 				5E6572AC2DC71F3A0063512A /* Preview Assets.xcassets in Resources */,
 				5E5663CB2DDBF3AD00B5BD06 /* Inter-VariableFont_opsz,wght.ttf in Resources */,
 				5E5663CC2DDBF3AF00B5BD06 /* RobotoMono-VariableFont_wght.ttf in Resources */,
+				5E5663CB2DDBF3AD00B5BD06 /* Inter-VariableFont_opsz,wght.ttf in Resources */,
+				5E5663CC2DDBF3AF00B5BD06 /* RobotoMono-VariableFont_wght.ttf in Resources */,
 				5E6572A82DC71F3A0063512A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,12 +394,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E5663D12DDC17CE00B5BD06 /* ConfigOptionsSheet.swift in Sources */,
 				5E5663B92DDBDC5100B5BD06 /* PomodoroView.swift in Sources */,
 				5EAE81272DC72B2800227EBA /* Habit.swift in Sources */,
 				5E6572A62DC71F390063512A /* ContentView.swift in Sources */,
 				5E6572A42DC71F390063512A /* attentiveApp.swift in Sources */,
 				5EAE81282DC72B2800227EBA /* Metrics.swift in Sources */,
 				5E5663BA2DDBDC5100B5BD06 /* PomodoroViewModel.swift in Sources */,
+				5E5663D02DDC17CE00B5BD06 /* ArcProgressBar.swift in Sources */,
 				5E5663BF2DDBEBB000B5BD06 /* PomodoroState.swift in Sources */,
 				5E5663BD2DDBEAC900B5BD06 /* PomodoroTheme.swift in Sources */,
 			);

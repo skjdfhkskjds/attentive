@@ -8,33 +8,70 @@
 import SwiftUI
 
 struct PomodoroTheme {
-    var background: Color
-    var accentOnSurface: Color
-    var lightAccentOnSurface: Color
-    var onSurface: Color
-    var lightOnSurface: Color
+    // ================================================
+    //                     Colors
+    // ================================================
+    let background: Color
+    let accentOnSurface: Color
+    let lightAccentOnSurface: Color
+    let onSurface: Color
+    let lightOnSurface: Color
+
+    // ================================================
+    //                     Spacing
+    // ================================================
+    static let vSpace: CGFloat = 48
+
+    // ================================================
+    //                  Button Spacing
+    // ================================================
+    static let buttonRowHSpace: CGFloat = 16
+    static let buttonSize: CGFloat = 50
+    static let buttonWideSize: CGFloat = 80
+    static let buttonCornerRadius: CGFloat = 12
+
+    // ================================================
+    //                Progress Indicator
+    // ================================================
+    static let progressIndicatorSize: CGFloat = 330
+    static let progressIndicatorInnerSize: CGFloat = 280
+    static let progressIndicatorLineWidth: CGFloat = 18
+
+    // ================================================
+    //                      Text
+    // ================================================
+    static let headingFont: Font = .system(size: 70, weight: .bold, design: .default)
+    static let textFont: Font = .system(size: 16, weight: .regular, design: .monospaced)
+
+    // ================================================
+    //                      Icons
+    // ================================================
+    static let optionsButtonIcon: Image = Image(systemName: "ellipsis")
+    static let startPauseButtonIcon: (Bool) -> Image = { isRunning in
+        return Image(systemName: isRunning ? "pause.fill" : "play.fill")
+    }
+    static let nextButtonIcon: Image = Image(systemName: "forward.end.fill")
 
     init(mode: PomodoroMode) {
         switch mode {
         case .focus:
-            background = Color("Pomodoro/Focus/Background")
-            accentOnSurface = Color("Pomodoro/Focus/AccentOnSurface")
-            lightAccentOnSurface = Color("Pomodoro/Focus/LightAccentOnSurface")
-            onSurface = Color("Pomodoro/Focus/OnSurface")
-            lightOnSurface = Color("Pomodoro/Focus/LightOnSurface")
+            background = Color(.Pomodoro.Focus.background)
+            accentOnSurface = Color(.Pomodoro.Focus.accentOnSurface)
+            lightAccentOnSurface = Color(.Pomodoro.Focus.lightAccentOnSurface)
+            onSurface = Color(.Pomodoro.Focus.onSurface)
+            lightOnSurface = Color(.Pomodoro.Focus.lightOnSurface)
         case .shortBreak:
-            background = Color("Pomodoro/ShortBreak/Background")
-            accentOnSurface = Color("Pomodoro/ShortBreak/AccentOnSurface")
-            lightAccentOnSurface = Color("Pomodoro/ShortBreak/LightAccentOnSurface")
-            onSurface = Color("Pomodoro/ShortBreak/OnSurface")
-            lightOnSurface = Color("Pomodoro/ShortBreak/LightOnSurface")
+            background = Color(.Pomodoro.ShortBreak.background)
+            accentOnSurface = Color(.Pomodoro.ShortBreak.accentOnSurface)
+            lightAccentOnSurface = Color(.Pomodoro.ShortBreak.lightAccentOnSurface)
+            onSurface = Color(.Pomodoro.ShortBreak.onSurface)
+            lightOnSurface = Color(.Pomodoro.ShortBreak.lightOnSurface)
         case .longBreak:
-            background = Color("Pomodoro/LongBreak/Background")
-            accentOnSurface = Color("Pomodoro/LongBreak/AccentOnSurface")
-            lightAccentOnSurface = Color("Pomodoro/LongBreak/LightAccentOnSurface")
-            onSurface = Color("Pomodoro/LongBreak/OnSurface")
-            lightOnSurface = Color("Pomodoro/LongBreak/LightOnSurface")
+            background = Color(.Pomodoro.LongBreak.background)
+            accentOnSurface = Color(.Pomodoro.LongBreak.accentOnSurface)
+            lightAccentOnSurface = Color(.Pomodoro.LongBreak.lightAccentOnSurface)
+            onSurface = Color(.Pomodoro.LongBreak.onSurface)
+            lightOnSurface = Color(.Pomodoro.LongBreak.lightOnSurface)
         }
     }
-    
 }
