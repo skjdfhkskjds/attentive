@@ -21,9 +21,12 @@
 		5E6572B62DC71F3A0063512A /* attentiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6572B52DC71F3A0063512A /* attentiveTests.swift */; };
 		5E6572C02DC71F3A0063512A /* attentiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6572BF2DC71F3A0063512A /* attentiveUITests.swift */; };
 		5E6572C22DC71F3A0063512A /* attentiveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6572C12DC71F3A0063512A /* attentiveUITestsLaunchTests.swift */; };
-		5E6572D02DC720090063512A /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = 5E6572CF2DC720090063512A /* Inject */; };
 		5EAE81272DC72B2800227EBA /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAE81232DC72B2800227EBA /* Habit.swift */; };
 		5EAE81282DC72B2800227EBA /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAE81242DC72B2800227EBA /* Metrics.swift */; };
+		5ECED03B2DDC2343007E04B6 /* NavigationGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECED03A2DDC2343007E04B6 /* NavigationGraph.swift */; };
+		5ECED0402DDC2450007E04B6 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECED03C2DDC2450007E04B6 /* CalendarView.swift */; };
+		5ECED0412DDC2450007E04B6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECED03E2DDC2450007E04B6 /* HomeView.swift */; };
+		5ECED0432DDC24F9007E04B6 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECED0422DDC24F9007E04B6 /* Charts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,10 @@
 		5EAE810A2DC72A9900227EBA /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		5EAE81232DC72B2800227EBA /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		5EAE81242DC72B2800227EBA /* Metrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		5ECED03A2DDC2343007E04B6 /* NavigationGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationGraph.swift; sourceTree = "<group>"; };
+		5ECED03C2DDC2450007E04B6 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		5ECED03E2DDC2450007E04B6 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5ECED0422DDC24F9007E04B6 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.4.sdk/System/Library/Frameworks/Charts.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E6572D02DC720090063512A /* Inject in Frameworks */,
+				5ECED0432DDC24F9007E04B6 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +125,9 @@
 		5E5663B02DDBD9F000B5BD06 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				5E6572A32DC71F390063512A /* attentiveApp.swift */,
+				5E6572A52DC71F390063512A /* ContentView.swift */,
+				5ECED0392DDC22AF007E04B6 /* Navigation */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -137,6 +147,10 @@
 		5E5663B82DDBDC5100B5BD06 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				5ECED03D2DDC2450007E04B6 /* Calendar */,
+				5ECED03F2DDC2450007E04B6 /* Home */,
+				5ECED0382DDC222B007E04B6 /* Auth */,
+				5ECED0372DDC2223007E04B6 /* Habit */,
 				5E5663B72DDBDC5100B5BD06 /* Pomodoro */,
 			);
 			path = Features;
@@ -201,10 +215,8 @@
 				5E5663C02DDBF32C00B5BD06 /* Shared */,
 				5E5663BB2DDBE9DF00B5BD06 /* Resources */,
 				5E5663B82DDBDC5100B5BD06 /* Features */,
-				5E6572A32DC71F390063512A /* attentiveApp.swift */,
 				5E5663B02DDBD9F000B5BD06 /* App */,
 				5E5663AF2DDBD9DE00B5BD06 /* Models */,
-				5E6572A52DC71F390063512A /* ContentView.swift */,
 				5E6572A72DC71F3A0063512A /* Assets.xcassets */,
 				5E6572A92DC71F3A0063512A /* attentive.entitlements */,
 				5E6572AA2DC71F3A0063512A /* Preview Content */,
@@ -240,9 +252,48 @@
 		5EAE81092DC72A9900227EBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5ECED0422DDC24F9007E04B6 /* Charts.framework */,
 				5EAE810A2DC72A9900227EBA /* AuthenticationServices.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5ECED0372DDC2223007E04B6 /* Habit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Habit;
+			sourceTree = "<group>";
+		};
+		5ECED0382DDC222B007E04B6 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		5ECED0392DDC22AF007E04B6 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				5ECED03A2DDC2343007E04B6 /* NavigationGraph.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		5ECED03D2DDC2450007E04B6 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				5ECED03C2DDC2450007E04B6 /* CalendarView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		5ECED03F2DDC2450007E04B6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5ECED03E2DDC2450007E04B6 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +314,6 @@
 			);
 			name = attentive;
 			packageProductDependencies = (
-				5E6572CF2DC720090063512A /* Inject */,
 			);
 			productName = attentive;
 			productReference = 5E6572A02DC71F390063512A /* attentive.app */;
@@ -386,6 +436,9 @@
 			files = (
 				5E5663D12DDC17CE00B5BD06 /* ConfigOptionsSheet.swift in Sources */,
 				5E5663B92DDBDC5100B5BD06 /* PomodoroView.swift in Sources */,
+				5ECED0412DDC2450007E04B6 /* HomeView.swift in Sources */,
+				5ECED0402DDC2450007E04B6 /* CalendarView.swift in Sources */,
+				5ECED03B2DDC2343007E04B6 /* NavigationGraph.swift in Sources */,
 				5EAE81272DC72B2800227EBA /* Habit.swift in Sources */,
 				5E6572A62DC71F390063512A /* ContentView.swift in Sources */,
 				5E6572A42DC71F390063512A /* attentiveApp.swift in Sources */,
@@ -753,14 +806,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		5E6572CF2DC720090063512A /* Inject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5E6572CE2DC71FF20063512A /* XCRemoteSwiftPackageReference "Inject" */;
-			productName = Inject;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5E6572982DC71F390063512A /* Project object */;
 }
