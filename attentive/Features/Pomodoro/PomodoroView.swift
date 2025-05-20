@@ -30,14 +30,14 @@ public struct PomodoroView: View {
                     // Options button
                     Button(action: { showOptions = true }) {
                         PomodoroTheme.optionsButtonIcon
+                            .frame(
+                                width: PomodoroTheme.buttonSize,
+                                height: PomodoroTheme.buttonSize
+                            )
+                            .foregroundColor(viewModel.state.mode.theme.accentOnSurface)
+                            .background(viewModel.state.mode.theme.onSurface)
+                            .cornerRadius(PomodoroTheme.buttonCornerRadius)
                     }
-                        .frame(
-                            width: PomodoroTheme.buttonSize,
-                            height: PomodoroTheme.buttonSize
-                        )
-                        .foregroundColor(viewModel.state.mode.theme.accentOnSurface)
-                        .background(viewModel.state.mode.theme.onSurface)
-                        .cornerRadius(PomodoroTheme.buttonCornerRadius)
                         .sheet(isPresented: $showOptions) {
                             PomodoroOptionsSheet(
                                 mode: viewModel.state.mode,
@@ -48,25 +48,25 @@ public struct PomodoroView: View {
                     // Start/pause button
                     Button(action: { viewModel.startPauseTimer() }) {
                         PomodoroTheme.startPauseButtonIcon(viewModel.state.isRunning)
+                            .frame(
+                                width: PomodoroTheme.buttonWideSize,
+                                height: PomodoroTheme.buttonSize
+                            )
+                            .foregroundColor(viewModel.state.mode.theme.onSurface)
+                            .background(viewModel.state.mode.theme.accentOnSurface)
+                            .cornerRadius(PomodoroTheme.buttonCornerRadius)
                     }
-                        .frame(
-                            width: PomodoroTheme.buttonWideSize,
-                            height: PomodoroTheme.buttonSize
-                        )
-                        .foregroundColor(viewModel.state.mode.theme.onSurface)
-                        .background(viewModel.state.mode.theme.accentOnSurface)
-                        .cornerRadius(PomodoroTheme.buttonCornerRadius)
                     // Next button
                     Button(action: { viewModel.nextMode() }) {
                         PomodoroTheme.nextButtonIcon
+                            .frame(
+                                width: PomodoroTheme.buttonSize,
+                                height: PomodoroTheme.buttonSize
+                            )
+                            .foregroundColor(viewModel.state.mode.theme.accentOnSurface)
+                            .background(viewModel.state.mode.theme.onSurface)
+                            .cornerRadius(PomodoroTheme.buttonCornerRadius)
                     }
-                        .frame(
-                            width: PomodoroTheme.buttonSize,
-                            height: PomodoroTheme.buttonSize
-                        )
-                        .foregroundColor(viewModel.state.mode.theme.accentOnSurface)
-                        .background(viewModel.state.mode.theme.onSurface)
-                        .cornerRadius(PomodoroTheme.buttonCornerRadius)
                 }
             }
             .padding()
