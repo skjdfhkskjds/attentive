@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-let progressIndicatorSize: CGFloat = 330
-let progressIndicatorInnerSize: CGFloat = 280
-let progressIndicatorLineWidth: CGFloat = 18
-
 public struct PomodoroView: View {
     @StateObject private var viewModel = PomodoroViewModel()
     @State private var showOptions = false
@@ -19,42 +15,54 @@ public struct PomodoroView: View {
         ZStack {
             viewModel.mode.theme.background
                 .ignoresSafeArea()
-            VStack(spacing: 48) {
+            VStack(spacing: PomodoroTheme.vSpace) {
                 ZStack {
                     ArcProgressBar(progress: progress, mode: viewModel.mode)
                     VStack {
                         Text(timeString)
-                            .font(.system(size: 70, weight: .bold, design: .default))
+                            .font(PomodoroTheme.timeFont)
                             .foregroundColor(viewModel.mode.theme.accentOnSurface)
                     }
                 }
 
-                HStack(spacing: 16) {
+                HStack(spacing: PomodoroTheme.buttonRowHSpace) {
+                    // Options button
                     Button(action: { showOptions = true }) {
-                        Image(systemName: "ellipsis")
+                        PomodoroTheme.optionsButtonIcon
                     }
-                        .frame(width: 50, height: 50)
+                        .frame(
+                            width: PomodoroTheme.buttonSize,
+                            height: PomodoroTheme.buttonSize
+                        )
                         .foregroundColor(viewModel.mode.theme.accentOnSurface)
                         .background(viewModel.mode.theme.onSurface)
-                        .cornerRadius(12)
+                        .cornerRadius(PomodoroTheme.buttonCornerRadius)
                     .sheet(isPresented: $showOptions) {
                         Text("Options go here")
                             .padding()
                     }
+                    // Start/pause button
                     Button(action: { viewModel.startPauseTimer() }) {
-                        Image(systemName: viewModel.isRunning ? "pause.fill" : "play.fill")
+                        PomodoroTheme.startPauseButtonIcon(viewModel.isRunning)
                     }
-                        .frame(width: 80, height: 50)
+                        .frame(
+                            width: PomodoroTheme.buttonWideSize,
+                            height: PomodoroTheme.buttonSize
+                        )
                         .foregroundColor(viewModel.mode.theme.onSurface)
                         .background(viewModel.mode.theme.accentOnSurface)
-                        .cornerRadius(12)
+                        .cornerRadius(PomodoroTheme.buttonCornerRadius)
+                    // Next button
                     Button(action: { viewModel.moveToNextSegment() }) {
-                        Image(systemName: "forward.end.fill")
+                        PomodoroTheme.nextButtonIcon
                     }
-                        .frame(width: 50, height: 50)
+                        .frame(
+                            width: PomodoroTheme.buttonSize,
+                            height: PomodoroTheme.buttonSize
+                        )
                         .foregroundColor(viewModel.mode.theme.accentOnSurface)
                         .background(viewModel.mode.theme.onSurface)
-                        .cornerRadius(12)
+                        .cornerRadius(PomodoroTheme.buttonCornerRadius)
                 }
             }
             .padding()
@@ -84,35 +92,35 @@ public struct ArcProgressBar: View {
 
     public var body: some View {
         ZStack {
+            // Background circle
             Circle()
                 .fill(mode.theme.lightOnSurface)
                 .frame(
-                    width: progressIndicatorSize,
-                    height: progressIndicatorSize
+                    width: PomodoroTheme.progressIndicatorSize,
+                    height: PomodoroTheme.progressIndicatorSize
                 )
             // Background arc (track)
             Circle()
                 .stroke(mode.theme.onSurface, style: StrokeStyle(
-                    lineWidth: progressIndicatorLineWidth,
+                    lineWidth: PomodoroTheme.progressIndicatorLineWidth,
                     lineCap: .round
                 ))
-                .rotationEffect(.degrees(-90))
                 .frame(
-                    width: progressIndicatorInnerSize,
-                    height: progressIndicatorInnerSize
+                    width: PomodoroTheme.progressIndicatorInnerSize,
+                    height: PomodoroTheme.progressIndicatorInnerSize
                 )
             // Foreground arc (progress)
             Circle()
                 .trim(from: 0, to: progress)
                 .stroke(mode.theme.lightAccentOnSurface, style: StrokeStyle(
-                    lineWidth: progressIndicatorLineWidth,
+                    lineWidth: PomodoroTheme.progressIndicatorLineWidth,
                     lineCap: .round
                 ))
                 .rotationEffect(.degrees(-90))
                 .animation(.linear, value: progress)
                 .frame(
-                    width: progressIndicatorInnerSize,
-                    height: progressIndicatorInnerSize
+                    width: PomodoroTheme.progressIndicatorInnerSize,
+                    height: PomodoroTheme.progressIndicatorInnerSize
                 )
         }
     }
