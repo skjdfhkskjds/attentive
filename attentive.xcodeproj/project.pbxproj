@@ -204,7 +204,12 @@
 				5E5663C02DDBF32C00B5BD06 /* Shared */,
 				5E5663BB2DDBE9DF00B5BD06 /* Resources */,
 				5E5663B82DDBDC5100B5BD06 /* Features */,
+				5E5663C02DDBF32C00B5BD06 /* Shared */,
+				5E5663BB2DDBE9DF00B5BD06 /* Resources */,
+				5E5663B82DDBDC5100B5BD06 /* Features */,
 				5E6572A32DC71F390063512A /* attentiveApp.swift */,
+				5E5663B02DDBD9F000B5BD06 /* App */,
+				5E5663AF2DDBD9DE00B5BD06 /* Models */,
 				5E5663B02DDBD9F000B5BD06 /* App */,
 				5E5663AF2DDBD9DE00B5BD06 /* Models */,
 				5E6572A52DC71F390063512A /* ContentView.swift */,
@@ -360,6 +365,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E6572AC2DC71F3A0063512A /* Preview Assets.xcassets in Resources */,
+				5E5663CB2DDBF3AD00B5BD06 /* Inter-VariableFont_opsz,wght.ttf in Resources */,
+				5E5663CC2DDBF3AF00B5BD06 /* RobotoMono-VariableFont_wght.ttf in Resources */,
 				5E5663CB2DDBF3AD00B5BD06 /* Inter-VariableFont_opsz,wght.ttf in Resources */,
 				5E5663CC2DDBF3AF00B5BD06 /* RobotoMono-VariableFont_wght.ttf in Resources */,
 				5E6572A82DC71F3A0063512A /* Assets.xcassets in Resources */,
