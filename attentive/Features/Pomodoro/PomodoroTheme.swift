@@ -40,7 +40,8 @@ struct PomodoroTheme {
     // ================================================
     //                      Text
     // ================================================
-    static let timeFont: Font = .system(size: 70, weight: .bold, design: .default)
+    static let headingFont: Font = .system(size: 70, weight: .bold, design: .default)
+    static let textFont: Font = .system(size: 16, weight: .regular, design: .monospaced)
 
     // ================================================
     //                      Icons

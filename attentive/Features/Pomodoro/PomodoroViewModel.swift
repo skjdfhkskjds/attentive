@@ -9,23 +9,25 @@ import Foundation
 import Combine
 
 class PomodoroViewModel: ObservableObject {
-    @Published var config: PomodoroConfig
-    @Published var mode: PomodoroMode = .focus
-    @Published var timeRemaining: TimeInterval
-    @Published var isRunning: Bool = false
-    @Published var cycleCount: Int = 0
+    @Published var state: PomodoroState
+    @Published var modifiedConfig: PomodoroConfig
 
     private var timer: Timer?
-    private var cancellables = Set<AnyCancellable>()
 
     init(config: PomodoroConfig = PomodoroConfig()) {
-        self.config = config
-        self.timeRemaining = config.focusDuration
+        self.state = PomodoroState(
+            config: config,
+            mode: .focus,
+            timeElapsed: 0,
+            isRunning: false,
+            cycleCount: 0
+        )
+        self.modifiedConfig = config
     }
 
     func startPauseTimer() {
-        isRunning.toggle()
-        if isRunning {
+        state.isRunning.toggle()
+        if state.isRunning {
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
                 self?.tick()
             }
@@ -36,43 +38,37 @@ class PomodoroViewModel: ObservableObject {
     }
 
     func tick() {
-        guard timeRemaining > 0 else {
+        guard state.timeRemaining() > 0 else {
             timer?.invalidate()
             timer = nil
-            moveToNextSegment()
+            nextMode()
             return
         }
-        timeRemaining -= 1
+        state.timeElapsed += 1
     }
 
-    func moveToNextSegment() {
-        switch mode {
+    func nextMode() {
+        switch state.mode {
         case .focus:
-            cycleCount += 1
-            if cycleCount % config.cyclesBeforeLongBreak == 0 {
-                mode = .longBreak
+            state.cycleCount += 1
+            if state.cycleCount % state.config.cyclesBeforeLongBreak == 0 {
+                state.mode = .longBreak
             } else {
-                mode = .shortBreak
+                state.mode = .shortBreak
             }
         case .shortBreak:
-            mode = .focus
+            state.mode = .focus
         case .longBreak:
-            mode = .focus
-            cycleCount = 0
+            state.mode = .focus
+            state.cycleCount = 0
         }
-        reset()
+        timer?.invalidate()
+        state.reset()
     }
 
-    func reset() {
-        timer?.invalidate()
-        switch mode {
-        case .focus:
-            timeRemaining = config.focusDuration
-        case .shortBreak:
-            timeRemaining = config.shortBreakDuration
-        case .longBreak:
-            timeRemaining = config.longBreakDuration
-        }
-        isRunning = false
+    func saveConfig() {
+        if modifiedConfig == state.config { return }
+        // TODO: save config to database
+        state.config = modifiedConfig
     }
 }
