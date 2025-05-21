@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct attentiveApp: App {
+    @StateObject private var profileVM = ProfileViewModel(
+        getUser: GetUserUseCase(
+            repository: DefaultUserRepository(
+                store: Database()
+            )
+        )
+    )
+
     var body: some Scene {
         WindowGroup {
-            PomodoroView()
+            ProfileView()
+                .environmentObject(profileVM)
         }
     }
 }

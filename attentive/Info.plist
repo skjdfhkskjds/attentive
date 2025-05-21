@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Fonts/poppins.bold.ttf</string>
+		<string>Fonts/poppins.medium.ttf</string>
+		<string>Fonts/poppins.regular.ttf</string>
+		<string>Fonts/poppins.semibold.ttf</string>
+		<string>Fonts/RobotoMono-VariableFont_wght.ttf</string>
+	</array>
+</dict>
+</plist>

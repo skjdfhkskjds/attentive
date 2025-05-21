@@ -69,7 +69,7 @@ public struct PomodoroOptionsSheet: View {
                 .foregroundColor(mode.theme.accentOnSurface)
             Spacer()
             TextField("", value: value, formatter: NumberFormatter())
-                .keyboardType(.numberPad)
+//                .keyboardType(.numberPad)
                 .frame(width: 60)
                 .padding(8)
                 .background(mode.theme.onSurface)

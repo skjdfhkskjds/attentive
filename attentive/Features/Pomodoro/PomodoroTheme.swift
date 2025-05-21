@@ -26,9 +26,9 @@ struct PomodoroTheme {
     //                  Button Spacing
     // ================================================
     static let buttonRowHSpace: CGFloat = 16
-    static let buttonSize: CGFloat = 50
+    static let buttonSize: CGFloat = 56
     static let buttonWideSize: CGFloat = 80
-    static let buttonCornerRadius: CGFloat = 12
+    static let buttonCornerRadius: CGFloat = 16
 
     // ================================================
     //                Progress Indicator
