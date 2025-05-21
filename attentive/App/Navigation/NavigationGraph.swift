@@ -8,21 +8,21 @@
 import Foundation
 import SwiftUI
 
-enum NavigationDestination: Hashable {
+enum Route: Hashable {
     case home
     case pomodoro
     case calendar
 }
 
 struct NavigationGraph: View {
-    @State private var path: [NavigationDestination] = []
-    @State private var selectedTab: NavigationDestination = .home
+    @State private var path: [Route] = []
+    @State private var selectedTab: Route = .home
 
     var body: some View {
         NavigationStack(path: $path) {
             HomeView()
-                .navigationDestination(for: NavigationDestination.self) { destination in
-                    switch destination {
+                .navigationDestination(for: Route.self) { route in
+                    switch route {
                     case .home:
                         HomeView()
                     case .pomodoro:
