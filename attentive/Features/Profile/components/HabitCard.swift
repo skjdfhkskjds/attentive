@@ -26,7 +26,7 @@ struct HabitCardView: View {
                     .bold()
                     .foregroundColor(ProfileTheme.text)
                 Text(habit.description)
-                    .font(Font.poppinsBold(16))
+                    .font(Font.poppinsBold(12))
                     .bold()
                     .foregroundColor(ProfileTheme.text)
             }
