@@ -13,6 +13,5 @@ struct ProfileTheme {
     static let text: Color = Color(.Default.background)
     static let accentOnSurface: Color = Color(.Default.accentOnSurface)
 
-    static let poppinsBold: String = "Poppins-Bold"
     static let poppinsSemiBold: String = "Poppins-SemiBold"
 }

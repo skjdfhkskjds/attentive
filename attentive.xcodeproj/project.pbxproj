@@ -36,6 +36,7 @@
 		5E5D062F2DDE8E5F00C37BA4 /* HabitCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5D062C2DDE8E5F00C37BA4 /* HabitCard.swift */; };
 		5E5D06302DDE8E5F00C37BA4 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5D062D2DDE8E5F00C37BA4 /* TodoList.swift */; };
 		5E5D06322DDE921100C37BA4 /* HabitCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5D06312DDE921100C37BA4 /* HabitCarousel.swift */; };
+		5E5D06342DDEA19F00C37BA4 /* PoppinsFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5D06332DDEA19F00C37BA4 /* PoppinsFont.swift */; };
 		5E6572A42DC71F390063512A /* attentiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6572A32DC71F390063512A /* attentiveApp.swift */; };
 		5E6572A62DC71F390063512A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6572A52DC71F390063512A /* ContentView.swift */; };
 		5E6572A82DC71F3A0063512A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6572A72DC71F3A0063512A /* Assets.xcassets */; };
@@ -110,6 +111,7 @@
 		5E5D062C2DDE8E5F00C37BA4 /* HabitCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitCard.swift; sourceTree = "<group>"; };
 		5E5D062D2DDE8E5F00C37BA4 /* TodoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		5E5D06312DDE921100C37BA4 /* HabitCarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitCarousel.swift; sourceTree = "<group>"; };
+		5E5D06332DDEA19F00C37BA4 /* PoppinsFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoppinsFont.swift; sourceTree = "<group>"; };
 		5E6572A02DC71F390063512A /* attentive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = attentive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6572A32DC71F390063512A /* attentiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attentiveApp.swift; sourceTree = "<group>"; };
 		5E6572A52DC71F390063512A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				5E5D05F72DDE87E400C37BA4 /* poppins.regular.ttf */,
 				5E5D05F62DDE87E400C37BA4 /* poppins.semibold.ttf */,
 				5E5663C42DDBF35E00B5BD06 /* RobotoMono-VariableFont_wght.ttf */,
+				5E5D06332DDEA19F00C37BA4 /* PoppinsFont.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				5E6572A42DC71F390063512A /* attentiveApp.swift in Sources */,
 				5E5D06322DDE921100C37BA4 /* HabitCarousel.swift in Sources */,
 				5EAE81282DC72B2800227EBA /* Metrics.swift in Sources */,
+				5E5D06342DDEA19F00C37BA4 /* PoppinsFont.swift in Sources */,
 				5E5663BA2DDBDC5100B5BD06 /* PomodoroViewModel.swift in Sources */,
 				5E5663D02DDC17CE00B5BD06 /* ArcProgressBar.swift in Sources */,
 				5E5D05DA2DDE29E400C37BA4 /* UserRepository.swift in Sources */,
@@ -588,7 +592,7 @@
 		5E6572C32DC71F3A0063512A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -641,8 +645,8 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx14.4;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -651,7 +655,7 @@
 		5E6572C42DC71F3A0063512A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -698,7 +702,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx14.4;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;

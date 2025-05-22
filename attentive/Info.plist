@@ -4,11 +4,11 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Fonts/poppins.bold.ttf</string>
-		<string>Fonts/poppins.medium.ttf</string>
-		<string>Fonts/poppins.regular.ttf</string>
-		<string>Fonts/poppins.semibold.ttf</string>
-		<string>Fonts/RobotoMono-VariableFont_wght.ttf</string>
+		<string>poppins.bold.ttf</string>
+		<string>poppins.medium.ttf</string>
+		<string>poppins.regular.ttf</string>
+		<string>poppins.semibold.ttf</string>
+		<string>RobotoMono-VariableFont_wght.ttf</string>
 	</array>
 </dict>
 </plist>

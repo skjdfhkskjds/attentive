@@ -10,14 +10,14 @@ struct ProfileView: View {
             VStack(spacing: 0) {
                 Spacer().frame(height: 60)
                 // Header
-                VStack(alignment: .leading, spacing: 0) {
+                VStack(alignment: .leading, spacing: -10) {
                     // TODO: greeting based on time of day
                     Text("Good morning,")
-                        .font(.custom(ProfileTheme.poppinsBold, size: 16))
+                        .font(Font.poppinsBold(16))
                         .bold()
                         .foregroundColor(ProfileTheme.accentOnSurface)
                     Text(profileVM.user?.getFirstName() ?? "")
-                        .font(.custom(ProfileTheme.poppinsBold, size: 64))
+                        .font(Font.poppinsBold(64))
                         .bold()
                         .foregroundColor(ProfileTheme.accentOnSurface)
                 }
