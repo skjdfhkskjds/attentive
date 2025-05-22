@@ -37,6 +37,7 @@
 		5E5D06302DDE8E5F00C37BA4 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5D062D2DDE8E5F00C37BA4 /* TodoList.swift */; };
 		5E5D06322DDE921100C37BA4 /* HabitCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5D06312DDE921100C37BA4 /* HabitCarousel.swift */; };
 		5E5D06342DDEA19F00C37BA4 /* PoppinsFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5D06332DDEA19F00C37BA4 /* PoppinsFont.swift */; };
+		5E5D06372DDFE18C00C37BA4 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5D06352DDFE18C00C37BA4 /* Strings.swift */; };
 		5E6572A42DC71F390063512A /* attentiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6572A32DC71F390063512A /* attentiveApp.swift */; };
 		5E6572A62DC71F390063512A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6572A52DC71F390063512A /* ContentView.swift */; };
 		5E6572A82DC71F3A0063512A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6572A72DC71F3A0063512A /* Assets.xcassets */; };
@@ -112,6 +113,7 @@
 		5E5D062D2DDE8E5F00C37BA4 /* TodoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		5E5D06312DDE921100C37BA4 /* HabitCarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitCarousel.swift; sourceTree = "<group>"; };
 		5E5D06332DDEA19F00C37BA4 /* PoppinsFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoppinsFont.swift; sourceTree = "<group>"; };
+		5E5D06352DDFE18C00C37BA4 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		5E6572A02DC71F390063512A /* attentive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = attentive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6572A32DC71F390063512A /* attentiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attentiveApp.swift; sourceTree = "<group>"; };
 		5E6572A52DC71F390063512A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		5E5663B82DDBDC5100B5BD06 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				5E5D06362DDFE18C00C37BA4 /* Common */,
 				5E5D05E32DDE7C2B00C37BA4 /* Home */,
 				5E5D05E02DDE7C2B00C37BA4 /* Profile */,
 				5E5663B72DDBDC5100B5BD06 /* Pomodoro */,
@@ -307,6 +310,14 @@
 				5E5D062D2DDE8E5F00C37BA4 /* TodoList.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		5E5D06362DDFE18C00C37BA4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5E5D06352DDFE18C00C37BA4 /* Strings.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		5E6572972DC71F390063512A = {
@@ -534,6 +545,7 @@
 				5E5D06322DDE921100C37BA4 /* HabitCarousel.swift in Sources */,
 				5EAE81282DC72B2800227EBA /* Metrics.swift in Sources */,
 				5E5D06342DDEA19F00C37BA4 /* PoppinsFont.swift in Sources */,
+				5E5D06372DDFE18C00C37BA4 /* Strings.swift in Sources */,
 				5E5663BA2DDBDC5100B5BD06 /* PomodoroViewModel.swift in Sources */,
 				5E5663D02DDC17CE00B5BD06 /* ArcProgressBar.swift in Sources */,
 				5E5D05DA2DDE29E400C37BA4 /* UserRepository.swift in Sources */,

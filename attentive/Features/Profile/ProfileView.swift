@@ -24,7 +24,7 @@ struct ProfileView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 43)
                 .padding(.top, 36)
-                .padding(.bottom, 24)
+                .padding(.bottom, 48)
                 // // Todo List
                 // VStack(alignment: .leading, spacing: 8) {
                 //     HStack {
@@ -43,9 +43,10 @@ struct ProfileView: View {
                 // }
                 // .padding(.top, 32)
                 // .padding(.horizontal, 42)
-                // Spacer()
+                Spacer()
                 // Habit Cards Carousel
                 HabitCarouselView(habits: profileVM.user?.habits ?? [])
+                    .padding(.bottom, 48)
                 // Bottom Nav Bar
 //                HStack(spacing: 48) {
 //                    NavBarItem(iconName: "house.fill")

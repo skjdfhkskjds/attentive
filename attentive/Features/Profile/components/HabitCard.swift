@@ -20,11 +20,16 @@ struct HabitCardView: View {
 
     var body: some View {
         ZStack(alignment: .leading) {
-            VStack(alignment: .leading, spacing: -10) {
-                Text(habit.name)
-                    .font(Font.poppinsBold(48))
-                    .bold()
-                    .foregroundColor(ProfileTheme.text)
+            VStack(alignment: .leading) {
+                MultiLineText(
+                    text: habit.name,
+                    maxLength: 8,
+                    spacing: 48,
+                    textFormatOptions: [
+                        { $0.font(Font.poppinsBold(48)).bold() },
+                        { $0.foregroundColor(ProfileTheme.text) }
+                    ]
+                )
                 Text(habit.description)
                     .font(Font.poppinsBold(12))
                     .bold()
