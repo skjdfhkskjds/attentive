@@ -103,10 +103,10 @@
 		5E5D05EF2DDE81B500C37BA4 /* MockUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserData.swift; sourceTree = "<group>"; };
 		5E5D05F12DDE829000C37BA4 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		5E5D05F32DDE850E00C37BA4 /* ProfileTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTheme.swift; sourceTree = "<group>"; };
-		5E5D05F52DDE87E400C37BA4 /* poppins.bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = poppins.bold.ttf; path = ../../../../../../Downloads/poppins.bold.ttf; sourceTree = "<group>"; };
-		5E5D05F62DDE87E400C37BA4 /* poppins.semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = poppins.semibold.ttf; path = ../../../../../../Downloads/poppins.semibold.ttf; sourceTree = "<group>"; };
-		5E5D05F72DDE87E400C37BA4 /* poppins.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = poppins.regular.ttf; path = ../../../../../../Downloads/poppins.regular.ttf; sourceTree = "<group>"; };
-		5E5D05F82DDE87E400C37BA4 /* poppins.medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = poppins.medium.ttf; path = ../../../../../../Downloads/poppins.medium.ttf; sourceTree = "<group>"; };
+		5E5D05F52DDE87E400C37BA4 /* poppins.bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poppins.bold.ttf; sourceTree = "<group>"; };
+		5E5D05F62DDE87E400C37BA4 /* poppins.semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poppins.semibold.ttf; sourceTree = "<group>"; };
+		5E5D05F72DDE87E400C37BA4 /* poppins.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poppins.regular.ttf; sourceTree = "<group>"; };
+		5E5D05F82DDE87E400C37BA4 /* poppins.medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poppins.medium.ttf; sourceTree = "<group>"; };
 		5E5D062B2DDE8C4000C37BA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5E5D062C2DDE8E5F00C37BA4 /* HabitCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitCard.swift; sourceTree = "<group>"; };
 		5E5D062D2DDE8E5F00C37BA4 /* TodoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
