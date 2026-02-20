@@ -20,7 +20,7 @@ struct HabitCardView: View {
 
     var body: some View {
         ZStack(alignment: .leading) {
-            VStack(alignment: .leading) {
+            ZStack(alignment: .topLeading) {
                 MultiLineText(
                     text: habit.name,
                     maxLength: 8,
@@ -34,8 +34,9 @@ struct HabitCardView: View {
                     .font(Font.poppinsBold(12))
                     .bold()
                     .foregroundColor(ProfileTheme.text)
+                    .padding(.top, 54)
             }
-            .padding(.top, 200)
+            .padding(.top, 180)
             .frame(maxWidth: cardWidth-50, alignment: .leading)
             .background(
                 CardContainer(
@@ -58,15 +59,16 @@ struct CardContainer: View {
     let cardHeight: CGFloat
     
     var body: some View {
-        ZStack(alignment: .leading) {
+        ZStack(alignment: .trailing) {
             RoundedRectangle(cornerRadius: 30)
                 .fill(ProfileTheme.accentOnSurface)
-                .frame(width: cardWidth, height: cardHeight)
             Image(imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: cardWidth-50, height: cardHeight-50)
-                .padding(.leading, 50)
+                // .frame(width: cardWidth * 0.55, height: cardHeight * 0.55)
+                .frame(width: cardWidth, height: cardHeight)
+                .padding(.trailing, cardWidth * 0.04)
         }
+        .frame(width: cardWidth, height: cardHeight)
     }
 }
